@@ -13,4 +13,4 @@ const AboutPage = () => {
 
 export default AboutPage;
 
-export const Head: HeadFC = () => <title>about page</title>;
+export const Head: HeadFC = () => <title>About - WengX</title>;

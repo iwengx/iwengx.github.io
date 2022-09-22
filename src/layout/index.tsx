@@ -9,9 +9,13 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
    return (
-      <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
+      <div>
          <Header></Header>
-         {children}
+         <main
+            style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}
+         >
+            {children}
+         </main>
       </div>
    );
 };
