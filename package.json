@@ -1,0 +1,33 @@
+{
+   "name": "my-gatsby-site",
+   "version": "1.0.0",
+   "private": true,
+   "description": "my-gatsby-site",
+   "author": "WengX-unx",
+   "keywords": [
+      "gatsby"
+   ],
+   "scripts": {
+      "dev": "gatsby develop",
+      "start": "gatsby develop",
+      "build": "gatsby build",
+      "serve": "gatsby serve",
+      "clean": "gatsby clean",
+      "typecheck": "tsc --noEmit"
+   },
+   "dependencies": {
+      "gatsby": "^4.21.1",
+      "gatsby-plugin-sass": "^5.22.0",
+      "gatsby-source-filesystem": "^4.23.0",
+      "gatsby-transformer-remark": "^5.23.1",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "sass": "^1.54.8"
+   },
+   "devDependencies": {
+      "@types/node": "^17.0.45",
+      "@types/react": "^18.0.20",
+      "@types/react-dom": "^18.0.6",
+      "typescript": "^4.8.2"
+   }
+}
