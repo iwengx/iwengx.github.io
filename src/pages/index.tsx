@@ -5,17 +5,21 @@ import { QueryProps } from '../interface/pages';
 
 import Layout from '../layout';
 
+import './styles/index.scss';
+
 const IndexPage = ({ data }: { data: QueryProps }) => {
    console.log(data);
 
    return (
       <Layout>
-         {data.allMarkdownRemark.edges.map((item) => (
-            <div>
-               <h2>{item.node.frontmatter.title}</h2>
-               <p>{item.node.excerpt}</p>
-            </div>
-         ))}
+         <article className="index-wrap">
+            {data.allMarkdownRemark.edges.map((item, index) => (
+               <div key={index} className="post">
+                  <h2 className="title">{item.node.frontmatter.title}</h2>
+                  <p className="excerpt">{item.node.excerpt}</p>
+               </div>
+            ))}
+         </article>
       </Layout>
    );
 };
