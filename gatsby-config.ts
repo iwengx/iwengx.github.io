@@ -1,9 +1,12 @@
 import type { GatsbyConfig } from 'gatsby';
+import _config from './_config';
+
+const { title, siteUrl } = _config;
 
 const config: GatsbyConfig = {
    siteMetadata: {
-      title: 'Blog - WengX',
-      siteUrl: `https://wengx-unx.github.io`,
+      title,
+      siteUrl,
    },
    // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
    // If you use VSCode you can also use the GraphQL plugin
