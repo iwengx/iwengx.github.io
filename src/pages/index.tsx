@@ -15,7 +15,9 @@ const IndexPage = ({ data }: { data: QueryProps }) => {
          <article className="index-wrap">
             {data.allMarkdownRemark.edges.map((item, index) => (
                <div key={index} className="post">
-                  <h2 className="title">{item.node.frontmatter.title}</h2>
+                  <h2 className="title text-primary">
+                     {item.node.frontmatter.title}
+                  </h2>
                   <p className="excerpt">{item.node.excerpt}</p>
                </div>
             ))}

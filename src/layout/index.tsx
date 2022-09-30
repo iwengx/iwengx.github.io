@@ -11,11 +11,7 @@ const Layout = ({ children }: Props) => {
    return (
       <div>
          <Header></Header>
-         <main
-            style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}
-         >
-            {children}
-         </main>
+         <main style={{ margin: '0 auto', maxWidth: 650 }}>{children}</main>
       </div>
    );
 };
