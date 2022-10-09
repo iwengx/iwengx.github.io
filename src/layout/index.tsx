@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { ReactNode } from 'react';
 
+import './index.scss';
+
 import Header from './header';
 
 interface Props {
@@ -9,9 +11,9 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
    return (
-      <div>
+      <div className="wengx-layout">
          <Header></Header>
-         <main style={{ margin: '0 auto', maxWidth: 650 }}>{children}</main>
+         <main className="layout-main">{children}</main>
       </div>
    );
 };

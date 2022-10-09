@@ -1,9 +1,22 @@
-.index-wrap {
+.index-menu {
+   width: 100%;
+   max-width: 300px;
+   border-right: var(--border-color);
+   overflow: hidden;
+   transition: border 0.2s ease, width 0.5s ease;
+}
+
+.index-article {
+   flex: 1;
+   padding: 30px 80px;
+   overflow-y: auto;
+
    .post {
       margin-bottom: 60px;
    }
 
-   .title {}
+   .title {
+   }
 
    .excerpt {
       line-height: 25px;
