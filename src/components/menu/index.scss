@@ -1,0 +1,17 @@
+.menu-container {
+   padding: 20px;
+
+   .post-title {
+      font-size: 1rem;
+      margin: 5px 0;
+      list-style-type: none;
+
+      cursor: pointer;
+      transition: padding 0.3s ease;
+
+      &:hover {
+         padding-left: 10px;
+         color: gray;
+      }
+   }
+}

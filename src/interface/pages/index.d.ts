@@ -4,9 +4,9 @@ export interface QueryProps {
          node: {
             frontmatter: {
                title: string;
+               tag: string[];
             };
          };
       }[];
-      totalCount: number;
    };
 }
