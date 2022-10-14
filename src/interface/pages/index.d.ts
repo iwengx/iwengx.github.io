@@ -1,12 +1,14 @@
+export interface MenuProps {
+   node: {
+      frontmatter: {
+         title: string;
+         type: string;
+      };
+   };
+}
+
 export interface QueryProps {
    allMarkdownRemark: {
-      edges: {
-         node: {
-            frontmatter: {
-               title: string;
-               tag: string[];
-            };
-         };
-      }[];
+      edges: MenuProps[];
    };
 }

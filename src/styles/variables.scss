@@ -3,6 +3,7 @@
    --text-primary-color: #23272f;
    --border-color: 1px solid #e2e2e2;
    --header-box-shadow: 0 0 13px 5px #e7e7e7;
+   --search-input-background-color: #e7e7e7;
 }
 
 :root[theme-color='dark'] {
@@ -10,4 +11,5 @@
    --text-primary-color: #c7c7c7;
    --border-color: 1px solid #2b2c2c;
    --header-box-shadow: 0 0 5px 0px #1e1e1e;
+   --search-input-background-color: #343b44;
 }
