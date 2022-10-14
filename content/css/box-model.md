@@ -1,6 +1,7 @@
 ---
 title: '盒子模型'
 tag: ['css']
+type: 'css'
 date: '2022-4-2'
 ---
 

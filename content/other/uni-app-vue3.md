@@ -1,6 +1,7 @@
 ---
 title: 'uni-app + Vue3 踩坑集'
 tag: ['uni-app']
+type: 'uni-app'
 date: ''
 ---
 

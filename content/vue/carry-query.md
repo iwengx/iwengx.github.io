@@ -1,6 +1,7 @@
 ---
 title: '跳转时携带上一个页面的 query'
 tag: ['vue']
+type: 'vue'
 date: ''
 ---
 

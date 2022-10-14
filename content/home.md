@@ -1,6 +1,7 @@
 ---
 title: '首页'
 tag: []
+type: ''
 date: ''
 ---
 

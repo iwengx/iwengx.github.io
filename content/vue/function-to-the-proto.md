@@ -1,6 +1,7 @@
 ---
 title: 'Vue 在原型链上挂载自定义函数'
 tag: ['vue']
+type: 'vue'
 date: ''
 ---
 

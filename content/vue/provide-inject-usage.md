@@ -1,6 +1,7 @@
 ---
 title: 'Provide / Inject 的使用'
 tag: ['vue']
+type: 'vue'
 date: ''
 ---
 
