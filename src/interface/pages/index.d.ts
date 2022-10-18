@@ -4,6 +4,9 @@ export interface MenuProps {
          title: string;
          type: string;
       };
+      fields: {
+         slug: string;
+      };
    };
 }
 

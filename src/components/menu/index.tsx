@@ -1,5 +1,5 @@
 import React, { ChangeEvent, ReactNode, useState } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 import { ClassificationProps } from './interface';
 import { MenuProps, QueryProps } from '../../interface/pages';
 import { throttle } from '../../utils';
@@ -18,6 +18,9 @@ const Menu = () => {
                   frontmatter {
                      title
                      type
+                  }
+                  fields {
+                     slug
                   }
                }
             }
@@ -75,7 +78,9 @@ const Menu = () => {
                   {classification[type].map((item, index) => {
                      return (
                         <li key={index} className="post-title">
-                           {item.node.frontmatter.title}
+                           <Link to={item.node.fields.slug}>
+                              {item.node.frontmatter.title}
+                           </Link>
                         </li>
                      );
                   })}
