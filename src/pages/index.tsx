@@ -28,7 +28,7 @@ export default IndexPage;
 export const Head: HeadFC = () => <title>Blog - WengX</title>;
 
 export const query = graphql`
-   query ($slug: String) {
+   query ($slug: String = "/home/") {
       markdownRemark(fields: { slug: { eq: $slug } }) {
          html
          fields {
