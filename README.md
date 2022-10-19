@@ -4,7 +4,7 @@
 
 不定期更新学习过程中遇到有意思的问题和知识点等。
 
-本文档采用到的技术栈： ![React](https://img.shields.io/badge/React.js-%2316181d?logo=React)![Gatsby](https://img.shields.io/badge/Gatsby.js-%23663399?logo=Gatsby)![TypeScript](https://img.shields.io/badge/TypeScript-%233178C6?logo=typescript&logoColor=white)![HTML5](https://img.shields.io/badge/HTML5-%23E34F26?logo=HTML5&logoColor=white)![Scss](https://img.shields.io/badge/Scss-%23CC6699?logo=sass&logoColor=white)
+本文档采用到的技术栈： ![React](https://img.shields.io/badge/React.js-%2316181d?logo=React) ![Gatsby](https://img.shields.io/badge/Gatsby.js-%23663399?logo=Gatsby) ![TypeScript](https://img.shields.io/badge/TypeScript-%233178C6?logo=typescript&logoColor=white) ![HTML5](https://img.shields.io/badge/HTML5-%23E34F26?logo=HTML5&logoColor=white) ![Scss](https://img.shields.io/badge/Scss-%23CC6699?logo=sass&logoColor=white)
 
 <br />
 
