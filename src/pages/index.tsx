@@ -14,7 +14,7 @@ const IndexPage = ({ data }: any) => {
    return (
       <Layout>
          <aside className="index-menu">
-            <Menu></Menu>
+            <Menu fields={post.fields}></Menu>
          </aside>
          <article className="index-article">
             {post && <Content children={post.html}></Content>}
@@ -31,6 +31,9 @@ export const query = graphql`
    query ($slug: String) {
       markdownRemark(fields: { slug: { eq: $slug } }) {
          html
+         fields {
+            slug
+         }
       }
    }
 `;

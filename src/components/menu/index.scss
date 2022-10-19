@@ -37,11 +37,12 @@
 
    .post-title {
       font-size: 1rem;
-      margin: 8px 0 8px 10px;
+      margin: 8px 0;
       list-style-type: none;
 
 
       a {
+         margin-left: 10px;
          text-decoration: none;
          color: var(--text-secondary-color);
 
@@ -49,5 +50,10 @@
             color: grey;
          }
       }
+   }
+
+   .post-active {
+      border-left: 4px solid #61dafb;
+      font-weight: bold;
    }
 }

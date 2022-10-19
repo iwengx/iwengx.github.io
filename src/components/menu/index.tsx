@@ -8,7 +8,13 @@ import SearchInput from './components/search-input';
 
 import './index.scss';
 
-const Menu = () => {
+interface Props {
+   fields: {
+      slug: string;
+   };
+}
+
+const Menu = ({ fields }: Props) => {
    // * 获取菜单列表，并且过滤掉 type 为空的菜单项
    const menuList = useStaticQuery<QueryProps>(graphql`
       {
@@ -77,7 +83,14 @@ const Menu = () => {
                <ul>
                   {classification[type].map((item, index) => {
                      return (
-                        <li key={index} className="post-title">
+                        <li
+                           key={index}
+                           className={`post-title ${
+                              fields.slug === item.node.fields.slug
+                                 ? 'post-active'
+                                 : ''
+                           }`}
+                        >
                            <Link to={item.node.fields.slug}>
                               {item.node.frontmatter.title}
                            </Link>
