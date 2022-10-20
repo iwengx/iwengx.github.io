@@ -15,12 +15,6 @@ const config: GatsbyConfig = {
    plugins: [
       'gatsby-plugin-sass',
       {
-         resolve: 'gatsby-transformer-remark',
-         options: {
-            plugins: [],
-         },
-      },
-      {
          resolve: 'gatsby-source-filesystem',
          options: {
             name: '../src/content',
@@ -61,6 +55,7 @@ const config: GatsbyConfig = {
                      escapeEntities: {},
                   },
                },
+               'gatsby-remark-emoji-unicode',
             ],
          },
       },
