@@ -17,6 +17,7 @@
 
    a {
       color: var(--text-color);
+
       &:hover {
          color: var(--text-color-hover);
       }
@@ -77,5 +78,9 @@
 
    p {
       margin: 16px 0;
+   }
+
+   pre[class*="language-"] {
+      border-radius: 10px;
    }
 }
