@@ -1,7 +1,7 @@
 ---
 title: '中相同变量的判断'
-tag: ['js']
-type: 'js'
+tag: ['ts']
+type: 'bad/good'
 date: ''
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: '返回匹配的字符串'
-tag: ['js']
-type: 'js'
+tag: ['ts']
+type: 'bad/good'
 date: ''
 ---
 
