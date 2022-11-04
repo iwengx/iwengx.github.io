@@ -14,29 +14,14 @@ date: '2022/10/24'
 ```typescript
 // 创建一个 Validator.ts
 
+// * 这里使用 ant design 的 message 显示检测错误的信息
+import { message } from 'ant-design-vue';
+
 /**
  * 检查策略
- * 各项的返回值格式都是 {true | 'string'}
- * @return true 或 失败的原因
+ * @return {boolean}
  */
 const checkStrategies = {
-   /**
-    * 检查 手机号码 的合法性
-    */
-   phoneNum: (value: string) => {
-      const phoneReg =
-         /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|19[0-9])[0-9]{8}$/;
-
-      return (value && phoneReg.test(value)) || '手机号不能为空或格式有误！';
-   },
-
-   /**
-    * 检查 验证码 的合法性
-    */
-   code: (value: string) => {
-      return (value && value.length === 6) || '验证码错误！';
-   },
-
    /**
     * 检查 密码 的合法性
     */
@@ -57,35 +42,46 @@ const checkStrategies = {
    },
 
    /**
+    * 检查 字符串是否为 ''、null、undefined
+    * @param str 字符串
+    * @param errMsg 错误时提示的内容
+    */
+   stringNotNull: (str: string, errMsg: string) => {
+      return !!str || errMsg;
+   },
+
+   /**
     * 根据表单内容进行扩展
     * ...
     */
 };
 
-type Method = 'phoneNum' | 'code' | 'password' | 'samePassword' | 'name';
-
 export class Validator {
    /**
     * （私有属性）存储策略事件
     */
-   #cache = [];
+   #cache: (() => boolean)[] = [];
 
    /**
     * 添加策略事件
     */
-   add = (method: Method, ...value: any) => {
+   add = (method: keyof typeof checkStrategies, ...value: any[]) => {
+      // @ts-ignore
       this.#cache.push(() => checkStrategies[method](...value));
    };
 
    /**
     * 检查
-    * @returns true 或 失败的原因
+    * @returns {boolean} 返回 通过(true) 或 失败(false)
     */
    check = () => {
-      for (let i = 0; i < this.#cache.length; i++) {
+      for (let i = 0; i < this.#cache.length; i += 1) {
          const checkFn = this.#cache[i];
          const result = checkFn(); // * 开始检查
-         if (typeof result === 'string') return result;
+         if (typeof result === 'string') {
+            message.warning(result);
+            return false;
+         }
       }
       return true;
    };
@@ -103,12 +99,7 @@ const validateForm = (): boolean => {
    // validator.add('xxx', 'xxx');
    // ...
 
-   const res = validator.check();
-   if (typeof res === 'string') {
-      console.log(res);
-      return false;
-   }
-   return true;
+   return validator.check();
 };
 
 const login = () => {
