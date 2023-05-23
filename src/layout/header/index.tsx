@@ -15,12 +15,7 @@ const Header = () => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                >
-                  <rect
-                     width="48"
-                     height="48"
-                     fill="white"
-                     fillOpacity="0.01"
-                  />
+                  <rect width="48" height="48" fill="white" fillOpacity="0.01" />
                   <path d="M9 18V42H39V18L24 6L9 18Z" fill="none" />
                   <path
                      d="M9 42V18L4 22L24 6L44 22L39 18V42H9Z"
@@ -36,29 +31,14 @@ const Header = () => {
                      strokeWidth="4"
                      strokeLinejoin="round"
                   />
-                  <path
-                     d="M9 42H39"
-                     stroke="#000000"
-                     strokeWidth="4"
-                     strokeLinecap="round"
-                  />
+                  <path d="M9 42H39" stroke="#000000" strokeWidth="4" strokeLinecap="round" />
                </svg>
             </Link>
          </div>
          <div className="right">
-            <a href="https://github.com/wengx-unx" target="_blank">
-               <svg
-                  width="29"
-                  height="29"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg"
-               >
-                  <rect
-                     width="48"
-                     height="48"
-                     fill="white"
-                     fillOpacity="0.01"
-                  />
+            <a href="https://github.com/iwengx" target="_blank">
+               <svg width="29" height="29" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="48" height="48" fill="white" fillOpacity="0.01" />
                   <path
                      fillRule="evenodd"
                      clipRule="evenodd"
@@ -72,7 +52,7 @@ const Header = () => {
                      fill="#333"
                   />
                </svg>
-               <p>WemgX-unx</p>
+               <p>iwengx</p>
             </a>
          </div>
       </div>
