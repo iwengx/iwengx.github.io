@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "docs:dev": "vitepress dev --port 8080",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.31"
+  },
+  "dependencies": {
+    "sass": "^1.69.5"
+  }
+}
