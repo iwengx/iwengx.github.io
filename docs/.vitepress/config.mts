@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'Blog - WengX',
   cleanUrls: true,
+  base: '/vitepress-blog/',
   // https://vitepress.dev/reference/default-theme-config
   themeConfig: {
     siteTitle: false,
