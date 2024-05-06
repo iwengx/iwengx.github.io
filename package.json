@@ -1,6 +1,7 @@
 {
   "name": "wengx-blog",
   "version": "1.0.0",
+  "packageManager": "pnpm@9.0.6",
   "description": "My blog, built with VitePress",
   "main": "index.js",
   "scripts": {
