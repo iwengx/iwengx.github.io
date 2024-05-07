@@ -1,12 +1,14 @@
 import { nextTick } from 'vue'
+import { isClient } from '../../../utils/env/index'
+import type { VitePressData } from 'vitepress'
 
 const enableTransitions = () =>
   'startViewTransition' in document &&
   window.matchMedia('(prefers-reduced-motion: no-preference)').matches
 
-const toggleAppearance = (useData) => {
+const toggleAppearance = (useData: () => VitePressData) => {
   const { isDark } = useData()
-  
+
   return async ({ clientX: x, clientY: y }: MouseEvent) => {
     if (!enableTransitions()) {
       isDark.value = !isDark.value
@@ -21,20 +23,22 @@ const toggleAppearance = (useData) => {
       )}px at ${x}px ${y}px)`,
     ]
 
-    // @ts-ignore
-    await document.startViewTransition(async () => {
-      isDark.value = !isDark.value
-      await nextTick()
-    }).ready
+    if (isClient) {
+      // @ts-ignore
+      await document.startViewTransition(async () => {
+        isDark.value = !isDark.value
+        await nextTick()
+      }).ready
 
-    document.documentElement.animate(
-      { clipPath: isDark.value ? clipPath.reverse() : clipPath },
-      {
-        duration: 300,
-        easing: 'ease-in',
-        pseudoElement: `::view-transition-${isDark.value ? 'old' : 'new'}(root)`,
-      },
-    )
+      document.documentElement.animate(
+        { clipPath: isDark.value ? clipPath.reverse() : clipPath },
+        {
+          duration: 300,
+          easing: 'ease-in',
+          pseudoElement: `::view-transition-${isDark.value ? 'old' : 'new'}(root)`,
+        },
+      )
+    }
   }
 }
 

@@ -5,7 +5,7 @@
         <div class="flex items-center mb-5">
           <div class="avatar mr-4">
             <div v-show="!avaterLoading" class="w-24 rounded-full">
-              <img src="/logo.png" @load="onAvaterLoad" />
+              <img v-if="isClient" src="/logo.png" @load="onAvaterLoad" />
             </div>
             <div v-show="avaterLoading" class="skeleton w-24 h-24 rounded-full shrink-0"></div>
           </div>
@@ -39,6 +39,7 @@ import { provide, watch, onMounted } from 'vue'
 import { useData } from 'vitepress'
 import { toggleAppearance } from './utils/themeToggle'
 import { useImageLoading } from '../../utils/hooks/useImageLoading'
+import { isClient } from '../../utils/env/index'
 import type { ProjectCardProps } from './types/index'
 import mediumZoom from 'medium-zoom'
 import DefaultTheme from 'vitepress/theme'
@@ -61,10 +62,12 @@ const { isDark } = useData()
 watch(
   isDark,
   () => {
-    if (isDark.value) {
-      document.documentElement.setAttribute('data-theme', 'dark')
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light')
+    if (isClient) {
+      if (isDark.value) {
+        document.documentElement.setAttribute('data-theme', 'dark')
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light')
+      }
     }
   },
   {

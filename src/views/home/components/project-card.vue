@@ -2,6 +2,7 @@
   <div class="project-item transition-all flex items-center p-3 rounded-xl select-none">
     <figure class="mr-3 opacity-80 transition-opacity hover:opacity-100">
       <img
+        v-if="isClient"
         v-show="!loading"
         data-zoomable
         class="max-w-40 w-40 h-24 rounded-lg"
@@ -23,6 +24,7 @@
 </template>
 
 <script setup lang="ts">
+import { isClient } from '../../../utils/env/index'
 import { useImageLoading } from '../../../utils/hooks/useImageLoading'
 import type { ProjectCardProps } from '../types/index'
 
