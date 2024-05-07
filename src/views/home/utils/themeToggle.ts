@@ -1,5 +1,5 @@
 import { nextTick } from 'vue'
-import { isClient } from '../../../utils/env/index'
+import { useClient } from '../../../utils/hooks/useClient'
 import type { VitePressData } from 'vitepress'
 
 const enableTransitions = () =>
@@ -8,6 +8,7 @@ const enableTransitions = () =>
 
 const toggleAppearance = (useData: () => VitePressData) => {
   const { isDark } = useData()
+  const { isClient } = useClient()
 
   return async ({ clientX: x, clientY: y }: MouseEvent) => {
     if (!enableTransitions()) {
@@ -23,7 +24,7 @@ const toggleAppearance = (useData: () => VitePressData) => {
       )}px at ${x}px ${y}px)`,
     ]
 
-    if (isClient) {
+    if (isClient.value) {
       // @ts-ignore
       await document.startViewTransition(async () => {
         isDark.value = !isDark.value

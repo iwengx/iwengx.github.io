@@ -38,8 +38,8 @@
 import { provide, watch, onMounted } from 'vue'
 import { useData } from 'vitepress'
 import { toggleAppearance } from './utils/themeToggle'
+import { useClient } from '../../utils/hooks/useClient'
 import { useImageLoading } from '../../utils/hooks/useImageLoading'
-import { isClient } from '../../utils/env/index'
 import type { ProjectCardProps } from './types/index'
 import mediumZoom from 'medium-zoom'
 import DefaultTheme from 'vitepress/theme'
@@ -59,10 +59,12 @@ const { loading: avaterLoading, onLoad: onAvaterLoad } = useImageLoading()
 provide('toggle-appearance', toggleAppearance(useData))
 
 const { isDark } = useData()
+const { isClient } = useClient()
+
 watch(
   isDark,
   () => {
-    if (isClient) {
+    if (isClient.value) {
       if (isDark.value) {
         document.documentElement.setAttribute('data-theme', 'dark')
       } else {

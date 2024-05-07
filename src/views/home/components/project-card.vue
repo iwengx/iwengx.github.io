@@ -24,13 +24,15 @@
 </template>
 
 <script setup lang="ts">
-import { isClient } from '../../../utils/env/index'
+import { useClient } from '../../../utils/hooks/useClient'
 import { useImageLoading } from '../../../utils/hooks/useImageLoading'
 import type { ProjectCardProps } from '../types/index'
 
 const props = defineProps<ProjectCardProps>()
 
 const { loading, onLoad } = useImageLoading()
+
+const { isClient } = useClient()
 </script>
 
 <style>
