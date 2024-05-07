@@ -4,9 +4,10 @@
       <div class="w-full max-w-[800px] mx-auto">
         <div class="flex items-center mb-5">
           <div class="avatar mr-4">
-            <div class="w-24 rounded-full">
-              <img src="/logo.png" />
+            <div v-show="!avaterLoading" class="w-24 rounded-full">
+              <img src="/logo.png" @load="onAvaterLoad" />
             </div>
+            <div v-show="avaterLoading" class="skeleton w-24 h-24 rounded-full shrink-0"></div>
           </div>
 
           <div>
@@ -37,6 +38,7 @@
 import { provide, watch, onMounted } from 'vue'
 import { useData } from 'vitepress'
 import { toggleAppearance } from './utils/themeToggle'
+import { useImageLoading } from '../../utils/hooks/useImageLoading'
 import type { ProjectCardProps } from './types/index'
 import mediumZoom from 'medium-zoom'
 import DefaultTheme from 'vitepress/theme'
@@ -44,10 +46,14 @@ import ProjectCard from './components/project-card.vue'
 import TechnologyStack from './components/technology-stack.vue'
 
 onMounted(() => {
-  mediumZoom('[data-zoomable]', {})
+  mediumZoom('[data-zoomable]', {
+    background: 'var(--vp-c-bg)',
+  })
 })
 
 const { Layout } = DefaultTheme
+
+const { loading: avaterLoading, onLoad: onAvaterLoad } = useImageLoading()
 
 provide('toggle-appearance', toggleAppearance(useData))
 

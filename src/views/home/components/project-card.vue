@@ -1,7 +1,14 @@
 <template>
   <div class="project-item transition-all flex items-center p-3 rounded-xl select-none">
     <figure class="mr-3 opacity-80 transition-opacity hover:opacity-100">
-      <img data-zoomable class="project-item-img rounded-lg" :src="props.imgSrc" />
+      <img
+        v-show="!loading"
+        data-zoomable
+        class="max-w-40 w-40 h-24 rounded-lg"
+        :src="props.imgSrc"
+        @load="onLoad"
+      />
+      <div v-show="loading" class="skeleton w-40 h-24 rounded-lg"></div>
     </figure>
     <div class="flex flex-col justify-between">
       <div class="mb-2">
@@ -16,9 +23,12 @@
 </template>
 
 <script setup lang="ts">
+import { useImageLoading } from '../../../utils/hooks/useImageLoading'
 import type { ProjectCardProps } from '../types/index'
 
 const props = defineProps<ProjectCardProps>()
+
+const { loading, onLoad } = useImageLoading()
 </script>
 
 <style>
@@ -29,9 +39,5 @@ const props = defineProps<ProjectCardProps>()
 .project-item:hover {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border: 1px solid transparent;
-}
-
-.project-item-img {
-  max-width: 160px;
 }
 </style>
