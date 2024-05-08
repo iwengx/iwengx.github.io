@@ -35,26 +35,21 @@
 </template>
 
 <script setup lang="ts">
-import { provide, watch, onMounted } from 'vue'
+import { provide, watch } from 'vue'
 import { useData } from 'vitepress'
 import { toggleAppearance } from './utils/themeToggle'
 import { useClient } from '../../utils/hooks/useClient'
 import { useImageLoading } from '../../utils/hooks/useImageLoading'
 import type { ProjectCardProps } from './types/index'
-import mediumZoom from 'medium-zoom'
 import DefaultTheme from 'vitepress/theme'
 import ProjectCard from './components/project-card.vue'
 import TechnologyStack from './components/technology-stack.vue'
 
-onMounted(() => {
-  mediumZoom('[data-zoomable]', {
-    background: 'var(--vp-c-bg)',
-  })
-})
-
 const { Layout } = DefaultTheme
 
-const { loading: avaterLoading, onLoad: onAvaterLoad } = useImageLoading()
+const { loading: avaterLoading, onLoad: onAvaterLoad } = useImageLoading({
+  mediumZoom: { enable: false },
+})
 
 provide('toggle-appearance', toggleAppearance(useData))
 
