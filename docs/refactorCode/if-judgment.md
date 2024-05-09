@@ -1,19 +1,10 @@
----
-title: '中相同变量的判断'
-tag: ['ts']
-type: 'bad/good'
-date: ''
----
-
 # if 中相同变量的判断
-
-## 介绍
 
 当需要判断一个 变量 是否在数组中时，不妨使用 **includes** 方法试试看。
 
-:hankey: bad code
+:-1: bad code
 
-```javascript
+```TypeScript
 const validate = (user: string): boolean => {
    if (user == '小明' || user == '小王' || user == '小李' ···) {
       return true;
@@ -24,12 +15,12 @@ const validate = (user: string): boolean => {
 
 :+1: good code
 
-```javascript
+```TypeScript
 const validate = (user: string): boolean => {
-  const effectiveValue: string[] = ['小明', '小王', '小李']
-  if (effectiveValue.includes(user)) {
-    return true
-  }
-  return false
+   const effectiveValue: string[] = ['小明', '小王', '小李']
+   if (effectiveValue.includes(user)) {
+      return true
+   }
+   return false
 }
 ```

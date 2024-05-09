@@ -1,19 +1,10 @@
----
-title: '返回匹配的字符串'
-tag: ['ts']
-type: 'bad/good'
-date: ''
----
-
 # 返回匹配的字符串
-
-## 介绍
 
 在平时开发中经常使用到的后端返回一个 number 类型 的 **key** 值，然后对应其某个状态，可以通过以下写法提升编码质量。
 
-:hankey: bad code
+:-1: bad code
 
-```javascript
+```TypeScript
 const findString = (key: number): string => {
    switch(key) {
       case 1: return 'this is one'
@@ -28,12 +19,12 @@ const findString = (key: number): string => {
 
 :+1: good code
 
-```javascript
+```TypeScript
 const findString = (key: number): string => ({
    1: 'this is one',
    2: 'this is two',
    3: 'this is three',
    ...
-}[key] || 'undefined')
+}[key] || '')
 
 ```
