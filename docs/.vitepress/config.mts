@@ -20,6 +20,7 @@ export default defineConfig({
           { text: '退出顶层循环', link: '/refactorCode/exit-loop' },
           { text: '返回匹配的字符串', link: '/refactorCode/return-matching-string' },
           { text: 'if 中相同变量的判断', link: '/refactorCode/if-judgment' },
+          { text: 'TS 获取函数类型', link: '/refactorCode/get-function-type' },
         ],
         collapsed: false,
       },
@@ -62,7 +63,7 @@ export default defineConfig({
 
     docFooter: {
       prev: '上一页',
-      next: '下一页'
+      next: '下一页',
     },
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/iwengx' }],
