@@ -55,7 +55,13 @@ export default defineConfig({
       },
       {
         text: 'Vue',
-        items: [{ text: '判断 slots 是否传入', link: '/vue/slots' }],
+        items: [
+          { text: '判断 slots 是否传入', link: '/vue/slots' },
+          {
+            text: '二次封装组件',
+            link: '/vue/re-encapsulation' 
+          },
+        ],
         collapsed: false,
       },
     ],
