@@ -6,11 +6,19 @@ export default defineConfig({
   cleanUrls: true,
   // https://vitepress.dev/reference/default-theme-config
   themeConfig: {
-    siteTitle: false,
+    logo: '/logo.png',
+    siteTitle: 'WengX',
 
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Docs', link: '/refactorCode/exit-loop' },
+      {
+        text: 'More',
+        items: [
+          { text: 'CodePen.io', link: 'https://codepen.io/iwengx' },
+          { text: 'SackOverflow', link: 'https://stackoverflow.com/users/19663702/walens' },
+        ],
+      },
     ],
 
     sidebar: [
