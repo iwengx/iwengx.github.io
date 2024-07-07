@@ -41,6 +41,14 @@ export default defineConfig({
         collapsed: false,
       },
       {
+        text: 'Utils',
+        items: [
+          { text: '策略模式实现 验证器', link: '/utils/validator' },
+          { text: '深度克隆', link: '/utils/deepClone' },
+        ],
+        collapsed: false,
+      },
+      {
         text: 'uni-app',
         items: [
           { text: '踩坑集', link: '/uniApp/development-pitfalls' },
@@ -49,17 +57,12 @@ export default defineConfig({
         collapsed: false,
       },
       {
-        text: 'Utils',
-        items: [{ text: '策略模式实现 验证器', link: '/utils/validator' }],
-        collapsed: false,
-      },
-      {
         text: 'Vue',
         items: [
           { text: '判断 slots 是否传入', link: '/vue/slots' },
           {
             text: '二次封装组件',
-            link: '/vue/re-encapsulation' 
+            link: '/vue/re-encapsulation',
           },
         ],
         collapsed: false,
