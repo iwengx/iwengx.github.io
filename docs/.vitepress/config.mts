@@ -44,6 +44,7 @@ export default defineConfig({
         text: 'Utils',
         items: [
           { text: '策略模式实现 验证器', link: '/utils/validator' },
+          { text: 'Axios 请求取消器', link: '/utils/axiosCanceler' },
           { text: '深度克隆', link: '/utils/deepClone' },
         ],
         collapsed: false,
