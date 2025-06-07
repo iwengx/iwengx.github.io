@@ -4,6 +4,7 @@
   "packageManager": "pnpm@9.0.6",
   "description": "My blog, built with VitePress",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vitepress dev docs",
